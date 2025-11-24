@@ -1,8 +1,11 @@
 import React from 'react'
 import './Home.css'
-const Home = () => {
+import Sidebar from '../../components/Sidebar/Sidebar.jsx'
+const Home = ({sidebar}) => {
   return (
-    <div>Home</div>
+    <>
+      <Sidebar sidebar={sidebar} />
+    </>
   )
 }
 

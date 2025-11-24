@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.side-link {
+    @apply flex items-center mb-[20px] w-fit flex-wrap cursor-pointer justify-center;
+}
+
+.sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+    
+}
