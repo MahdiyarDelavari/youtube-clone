@@ -4,8 +4,8 @@
     @apply basis-[69%];
 }
 
-.play-video video {
-    @apply w-full max-h-[calc(100vh-90px)] rounded-2xl;
+.play-video iframe {
+    @apply w-full h-[37vw] rounded-2xl;
 }
 
 .play-video h3 {

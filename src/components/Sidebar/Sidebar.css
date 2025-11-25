@@ -9,3 +9,6 @@
     scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
     
 }
+.side-link.active img{
+    @apply border-b-[3px] border-red-700 pb-[2px] scale-110 transition-all duration-200;
+}

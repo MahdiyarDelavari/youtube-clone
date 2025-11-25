@@ -1,116 +1,42 @@
 import React from "react";
 import "./Feed.css";
-import {
-	thumbnail1,
-	thumbnail2,
-	thumbnail3,
-	thumbnail4,
-	thumbnail5,
-	thumbnail6,
-	thumbnail7,
-	thumbnail8,
-} from "../../constant/photos";
-import { Link } from "react-router-dom";
 
-const Feed = () => {
+import { Link } from "react-router-dom";
+import { valueConverter } from "../../utils/ValueConverter";
+import moment from "moment";
+
+const Feed = ({ category }) => {
+	const [data, setData] = React.useState([]);
+
+	const fetchData = async () => {
+
+		const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`;
+		await fetch(videoList_url)
+			.then((res) => res.json())
+			.then((data) => setData(data.items));
+	};
+
+	React.useEffect(() => { 
+		fetchData();
+	}, [category]);
+	
+
 	return (
 		<div className="feed">
-			<Link to={"/video/20/123"} className="card">
-				<img src={thumbnail1} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</Link>
-			<div className="card">
-				<img src={thumbnail2} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail3} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail4} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail5} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail6} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail7} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail8} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail1} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail2} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail3} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail4} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail5} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail6} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail7} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
-			<div className="card">
-				<img src={thumbnail8} alt="" />
-				<h2>Best Channel To Learn Coding</h2>
-				<h3>MeowChannel</h3>
-				<p>15k views &bull; 2days ago</p>
-			</div>
+			{data.map((item) => (
+				<Link
+					key={item.id}
+					to={`/video/${item.snippet.categoryId}/${item.id}`}
+					className="card"
+				>
+					<img src={item.snippet.thumbnails.medium.url} alt="" />
+					<h2>{item.snippet.title}</h2>
+					<h3>{item.snippet.channelTitle}</h3>
+					<p>
+						{valueConverter(item.statistics.viewCount)} views &bull; {moment(item.snippet.publishedAt).fromNow()}
+					</p>
+				</Link>
+			))}
 		</div>
 	);
 };

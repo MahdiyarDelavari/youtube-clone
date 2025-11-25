@@ -3,17 +3,17 @@
     @apply basis-[30%];
 }
 .side-video-list{
-    @apply flex justify-between mb-[8px]; 
+    @apply flex justify-between mb-[8px] gap-2; 
 }
 
 .side-video-list img{
     @apply basis-[49%] w-[50%] rounded-xl;
 }
 .video-info{
-    @apply basis-[49%] mt-2;
+    @apply basis-[49%] mt-2 ;
 }
 .video-info h4{
-    @apply text-[13px] mb-[5px];
+    @apply text-[16px] mb-[5px] font-bold;
 }
 .video-info p{
     @apply text-[14px] mb-[5px] text-[#5a5a5a];
