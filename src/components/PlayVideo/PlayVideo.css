@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+.play-video {
+    @apply basis-[69%];
+}
+
+.play-video video {
+    @apply w-full max-h-[calc(100vh-90px)] rounded-2xl;
+}
+
+.play-video h3 {
+    @apply mt-[10px] font-[600] text-[22px];
+}
+
+.play-video-info {
+    @apply flex items-center justify-between flex-wrap mt-[10px] text-[14px] text-[#5a5a5a];
+}
+
+.play-video-info img {
+    @apply w-[20px] mr-[8px];
+}
+
+.play-video-info span {
+    @apply inline-flex items-center ml-[15px];
+}
+
+.play-video hr {
+    @apply border-0 h-[1px] bg-[#ccc] my-[10px];
+}
+
+.publisher {
+    @apply flex items-center mt-[20px];
+}
+
+.publisher div {
+    @apply flex-1 leading-[18px];
+}
+
+.publisher img {
+    @apply w-[50px] rounded-full mr-[15px] object-cover;
+}
+
+.publisher div p {
+    @apply text-black font-[600] text-[18px];
+}
+
+.publisher div span {
+    @apply text-[13px] text-[#df0c0c] font-[600];
+}
+
+.publisher button {
+    @apply bg-red-600 py-[8px] px-[30px] border-0 outline-0 rounded-[5px] cursor-pointer text-white
+}
+
+.video-description {
+    @apply pl-[65px] my-[15px];
+
+
+}
+
+.video-description p {
+    @apply text-[14px] mb-[5px] text-[#5a5a5a];
+}
+
+.video-description h4 {
+    @apply text-[14px] mt-[15px] text-[#5a5a5a];
+}
+
+.comment {
+    @apply flex items-start my-[20px];
+}
+
+.comment img{
+    @apply w-[35px] rounded-full mr-[15px] mt-[11px];
+}
+
+.comment h3{
+    @apply text-[14px] mb-[2px];
+}
+
+.comment h3 span{
+    @apply text-[12px] ml-[8px] text-[#5a5a5a] font-[500];
+}
+
+.comment-action{
+    @apply flex items-center my-[8px] text-[14px]
+}
+
+.comment-action img{
+    @apply rounded-[0] w-[20px] mr-[5px] mt-0
+}
+
+.comment-action span{
+    @apply mr-[20px] text-[#5a5a5a] mt-1
+} 

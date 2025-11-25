@@ -1,17 +1,17 @@
 import React from "react";
 import "./Navbar.css";
-import { Photos } from "../../constant/photos";
+import {
+	logoIcon,
+	menuIcon,
+	searchIcon,
+	uploadIcon,
+	moreIcon,
+	notificationIcon,
+	profileIcon,
+} from "../../constant/photos";
 import { Link } from "react-router-dom";
 const Navbar = ({ setSidebar }) => {
-	const {
-		logoIcon,
-		menuIcon,
-		searchIcon,
-		uploadIcon,
-		moreIcon,
-		notificationIcon,
-		profileIcon,
-	} = Photos;
+
 
 	return (
 		<nav className="flex-div py-[8px] px-[2%] justify-between shadow-lg/5 bg-white sticky top-0 z-10">

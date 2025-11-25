@@ -31,8 +31,15 @@ import thumbnail6 from "../assets/thumbnail6.png"
 import thumbnail7 from "../assets/thumbnail7.png"
 import thumbnail8 from "../assets/thumbnail8.png"
 
+import video1 from '../assets/video.mp4'
+import likeIcon from '../assets/like.png'
+import dislikeIcon from '../assets/dislike.png'
+import shareIcon from '../assets/share.png'
+import saveIcon from '../assets/save.png'
+import userProfileIcon from '../assets/user_profile.jpg'
 
-export const Photos = {
+
+export {
     homeIcon,
     menuIcon,
     logoIcon,
@@ -62,5 +69,11 @@ export const Photos = {
     thumbnail6,
     thumbnail7,
     thumbnail8,
+    video1,
+    likeIcon,
+    dislikeIcon,
+    shareIcon,
+    saveIcon,
+    userProfileIcon
 };
 

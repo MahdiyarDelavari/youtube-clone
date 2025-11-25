@@ -1,52 +1,71 @@
 import React from "react";
 import "./Sidebar.css";
-import { Photos } from "../../constant/photos";
-const Sidebar = ({sidebar}) => {
+import {
+	homeIcon,
+	gameIcon,
+	automobileIcon,
+	sportIcon,
+	entertainmentIcon,
+	techIcon,
+	musicIcon,
+	blogIcon,
+	newsIcon,
+	jackIcon,
+	simonIcon,
+	tomIcon,
+	meganIcon,
+	cameronIcon,
+} from "../../constant/photos";
+const Sidebar = ({ sidebar }) => {
 	return (
-		<div className={ `sidebar border-r-2 border-gray-200 bg-white w-[15%] h-[calc(100vh-70px)] overflow-y-auto pl-[2%] mt-[70px] pt-[20px] pb-[20px] fixed top-0 ${sidebar ? 'left-0' : '-left-80'} transition-all duration-1000`}>
+		<div
+			className={`sidebar border-r-2 border-gray-200 bg-white w-[15%] h-[calc(100vh-70px)] overflow-y-auto pl-[2%] mt-[70px] pt-[20px] pb-[20px] fixed top-0 ${
+				sidebar ? "left-0" : "-left-80"
+			} transition-all duration-1000`}
+		>
 			<div className="shortcut-links [&_img]:w-[20px] [&_img]:mr-[20px]">
 				<div className="side-link">
-					<img src={Photos.homeIcon} alt="" />
+					<img src={homeIcon} alt="" />
 					<p>Home</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.gameIcon} alt="" />
+					<img src={gameIcon} alt="" />
 					<p>Gaming</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.automobileIcon} alt="" />
+					<img src={automobileIcon} alt="" />
 					<p>Cars</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.sportIcon} alt="" />
+					<img src={sportIcon} alt="" />
 					<p>Sports</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.entertainmentIcon} alt="" />
+					<img src={entertainmentIcon} alt="" />
 					<p>Entertainment</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.techIcon} alt="" />
+					<img src={techIcon} alt="" />
 					<p>Technology</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.musicIcon} alt="" />
+					<img src={musicIcon} alt="" />
 					<p>Music</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.blogIcon} alt="" />
+					<img src={blogIcon} alt="" />
 					<p>Podcast</p>
 				</div>
 
 				<div className="side-link">
-					<img src={Photos.newsIcon} alt="" />
+					<img src={newsIcon} alt="" />
 					<p>News</p>
 				</div>
 
@@ -58,23 +77,23 @@ const Sidebar = ({sidebar}) => {
 					Subscribed
 				</h3>
 				<div className="side-link">
-					<img src={Photos.jackIcon} alt="" />
+					<img src={jackIcon} alt="" />
 					<p>Channel-1</p>
 				</div>
 				<div className="side-link">
-					<img src={Photos.simonIcon} alt="" />
+					<img src={simonIcon} alt="" />
 					<p>Channel-2</p>
 				</div>
 				<div className="side-link">
-					<img src={Photos.tomIcon} alt="" />
+					<img src={tomIcon} alt="" />
 					<p>Channel-3</p>
 				</div>
 				<div className="side-link">
-					<img src={Photos.meganIcon} alt="" />
+					<img src={meganIcon} alt="" />
 					<p>Channel-4</p>
 				</div>
 				<div className="side-link">
-					<img src={Photos.cameronIcon} alt="" />
+					<img src={cameronIcon} alt="" />
 					<p>Channel-5</p>
 				</div>
 			</div>
