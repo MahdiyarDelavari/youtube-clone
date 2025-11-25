@@ -1,0 +1,24 @@
+@import "tailwindcss";
+.recommended{
+    @apply basis-[30%];
+}
+.side-video-list{
+    @apply flex justify-between mb-[8px]; 
+}
+
+.side-video-list img{
+    @apply basis-[49%] w-[50%] rounded-xl;
+}
+.video-info{
+    @apply basis-[49%] mt-2;
+}
+.video-info h4{
+    @apply text-[13px] mb-[5px];
+}
+.video-info p{
+    @apply text-[14px] mb-[5px] text-[#5a5a5a];
+}
+
+.video-info p:nth-child(3){
+    @apply mt-10 text-red-700
+}
