@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.feed {
+    @apply grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))] gap-x-[16px] gap-y-[30px] mt-[15px];
+}
+
+.card img {
+    @apply w-full rounded-[5px];
+}
+
+.card h2 {
+    @apply text-[16px] font-[600] text-black my-[5px] ;
+}
+.card h3{
+    @apply text-[14px] font-[600] text-[#555] my-[6px];
+}
+.card p{
+    @apply text-[14px];
+}
